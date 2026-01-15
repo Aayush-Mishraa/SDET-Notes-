@@ -1,0 +1,1719 @@
+* *** **** *****************************************************************************************************************************************************
+
+* *** **** *****************************************************************************************************************************************************
+
+# **DETAILED TEST PLAN – E-LEARNING PLATFORM**
+
+---
+
+## **1. Document Information**
+
+| Item          | Details                   |
+| ------------- | ------------------------- |
+| Project Name  | E-Learning Platform (LMS) |
+| Document Type | Test Plan                 |
+| Version       | 1.0                       |
+| Prepared By   | QA Team                   |
+| Reviewed By   | QA Lead / Product Owner   |
+| Approved By   | Stakeholders              |
+| Date          | DD/MM/YYYY                |
+
+---
+
+## **2. Introduction**
+
+The purpose of this Test Plan is to define the **testing approach, scope, resources, schedule, tools, and deliverables** required to validate the E-Learning Platform.
+This platform enables students to enroll in courses, watch video content, attempt assessments, track progress, and receive certificates, while instructors and admins manage content and users.
+
+---
+
+## **3. Objectives**
+
+* Validate that all functional requirements are implemented correctly
+* Ensure system reliability, performance, and security
+* Identify defects early and reduce production risks
+* Ensure seamless user experience across devices and browsers
+* Verify compliance with business and technical requirements
+
+---
+
+## **4. Product Overview**
+
+### **User Roles**
+
+1. **Student**
+
+   * Register/Login
+   * Enroll in courses
+   * Watch videos
+   * Attempt quizzes
+   * Track progress
+   * Download certificates
+
+2. **Instructor**
+
+   * Create and manage courses
+   * Upload videos and materials
+   * Create assessments
+   * View student progress
+
+3. **Admin**
+
+   * User management
+   * Course approval
+   * Reports and analytics
+   * Payment and subscription management
+
+---
+
+## **5. Scope of Testing**
+
+### **5.1 In-Scope**
+
+#### **Authentication & Authorization**
+
+* User registration
+* Login / Logout
+* Forgot password
+* Role-based access control
+
+#### **Course Management**
+
+* Course creation
+* Course update/delete
+* Category & tagging
+* Course approval workflow
+
+#### **Content Delivery**
+
+* Video streaming
+* PDF/material downloads
+* Resume playback
+* Playback speed control
+
+#### **Assessments**
+
+* Quiz creation
+* Question types (MCQ, True/False)
+* Timed quizzes
+* Auto-evaluation
+* Score calculation
+
+#### **Progress Tracking**
+
+* Course completion %
+* Quiz scores
+* Learning history
+
+#### **Certificates**
+
+* Eligibility validation
+* Certificate generation
+* Download & sharing
+
+#### **Payments (if applicable)**
+
+* Subscription plans
+* Payment gateway integration
+* Transaction history
+* Refund scenarios
+
+#### **Notifications**
+
+* Email notifications
+* In-app notifications
+* Course reminders
+
+#### **Admin Dashboard**
+
+* User management
+* Reports
+* Analytics
+* Content moderation
+
+---
+
+### **5.2 Out-of-Scope**
+
+* Internal logic of third-party services
+* Hardware testing
+* Content quality and accuracy
+
+---
+
+## **6. Test Strategy**
+
+### **6.1 Manual Testing**
+
+* UI/UX validation
+* Exploratory testing
+* Ad-hoc testing
+
+### **6.2 Automation Testing**
+
+* Smoke tests
+* Regression tests
+* Critical user journeys
+* API automation
+
+### **6.3 API Testing**
+
+* Authentication APIs
+* Course APIs
+* Assessment APIs
+* Payment APIs
+
+### **6.4 Performance Testing**
+
+* Load testing
+* Stress testing
+* Spike testing
+
+### **6.5 Security Testing**
+
+* Authentication validation
+* Authorization checks
+* Data protection
+* OWASP Top 10 vulnerabilities
+
+---
+
+## **7. Types of Testing**
+
+### **7.1 Functional Testing**
+
+* Feature-level validation
+* Business logic verification
+* End-to-end workflows
+
+### **7.2 Non-Functional Testing**
+
+#### **Performance**
+
+* Concurrent users handling
+* Video streaming stability
+* Response time validation
+
+#### **Usability**
+
+* Ease of navigation
+* Accessibility
+* Mobile friendliness
+
+#### **Compatibility**
+
+* Browsers: Chrome, Firefox, Edge, Safari
+* Devices: Desktop, Tablet, Mobile
+* OS: Windows, macOS, Android, iOS
+
+#### **Security**
+
+* SQL Injection
+* XSS
+* CSRF
+* Session handling
+
+---
+
+## **8. Test Environment**
+
+| Component   | Details                       |
+| ----------- | ----------------------------- |
+| Environment | QA / Staging                  |
+| OS          | Windows, macOS                |
+| Browsers    | Chrome, Firefox, Edge, Safari |
+| Devices     | Desktop, Mobile, Tablet       |
+| Database    | Test DB                       |
+| Network     | Stable Internet               |
+
+---
+
+## **9. Test Data**
+
+* Valid and invalid user credentials
+* Dummy courses and videos
+* Sample quiz questions
+* Test payment cards
+* Large data sets for performance testing
+
+---
+
+## **10. Test Tools**
+
+| Purpose         | Tool                     |
+| --------------- | ------------------------ |
+| Test Management | Jira / TestRail          |
+| Automation      | Selenium / Playwright    |
+| API Testing     | Postman                  |
+| Performance     | JMeter                   |
+| CI/CD           | Jenkins / GitHub Actions |
+| Bug Tracking    | Jira                     |
+
+---
+
+## **11. Entry Criteria**
+
+* Requirements approved and frozen
+* Test environment ready
+* Build deployed successfully
+* Test data available
+
+---
+
+## **12. Exit Criteria**
+
+* All critical and high severity defects closed
+* Test cases executed with acceptable pass rate
+* Test summary report completed
+* Stakeholder sign-off received
+
+---
+
+## **13. Defect Management Process**
+
+1. Defect identification
+2. Defect logging
+3. Defect triage
+4. Fix verification
+5. Regression testing
+6. Defect closure
+
+---
+
+## **14. Severity & Priority**
+
+| Severity | Description                   |
+| -------- | ----------------------------- |
+| Critical | System crash, payment failure |
+| High     | Core feature not working      |
+| Medium   | Partial functionality issue   |
+| Low      | UI or cosmetic issue          |
+
+---
+
+## **15. Roles & Responsibilities**
+
+| Role                | Responsibility           |
+| ------------------- | ------------------------ |
+| QA Lead             | Test planning, reporting |
+| QA Engineer         | Test case execution      |
+| Automation Engineer | Automation scripts       |
+| Developers          | Bug fixing               |
+| Product Owner       | Requirement validation   |
+
+---
+
+## **16. Risks & Mitigation**
+
+| Risk                         | Mitigation                       |
+| ---------------------------- | -------------------------------- |
+| Frequent requirement changes | Change control process           |
+| Environment instability      | Backup environment               |
+| Tight deadlines              | Test prioritization & automation |
+
+---
+
+## **17. Assumptions**
+
+* Requirements are stable
+* Third-party services are available
+* Adequate test data is provided
+
+---
+
+## **18. Test Deliverables**
+
+* Test Plan
+* Test Scenarios
+* Test Cases
+* Defect Reports
+* Test Execution Report
+* Test Summary Report
+
+---
+
+## **19. Approval**
+
+| Name | Role          | Signature |
+| ---- | ------------- | --------- |
+|      | QA Lead       |           |
+|      | Product Owner |           |
+
+---
+
+* *** **** *****************************************************************************************************************************************************
+
+* *** **** *****************************************************************************************************************************************************
+
+# **TEST SCENARIOS – E-LEARNING PLATFORM (Udemy-Like LMS)**
+
+---
+
+## **1. User Registration & Authentication Scenarios**
+
+### **Registration**
+
+1. Verify user can register with valid email and password
+2. Verify registration fails with invalid email format
+3. Verify password policy validation (min length, special characters)
+4. Verify error message for already registered email
+5. Verify OTP/email verification after registration
+6. Verify user cannot login without email verification
+
+### **Login**
+
+7. Verify login with valid credentials
+8. Verify login fails with invalid password
+9. Verify login fails with unregistered email
+10. Verify “Remember Me” functionality
+11. Verify account lock after multiple failed login attempts
+
+### **Password Management**
+
+12. Verify forgot password email is sent
+13. Verify reset password link expiry
+14. Verify password cannot be reused
+15. Verify logout clears session properly
+
+---
+
+## **2. User Profile Scenarios**
+
+16. Verify user can update profile details
+17. Verify profile picture upload with valid format
+18. Verify invalid image format is rejected
+19. Verify language and preference settings
+20. Verify account deletion/deactivation
+
+---
+
+## **3. Course Discovery & Browsing Scenarios**
+
+21. Verify course listing loads successfully
+22. Verify courses displayed by category
+23. Verify search functionality with valid keywords
+24. Verify search with partial keywords
+25. Verify no results message for invalid search
+26. Verify filter by rating, price, duration
+27. Verify sorting by popularity, newest, rating
+
+---
+
+## **4. Course Details Page Scenarios**
+
+28. Verify course title, description, and instructor details
+29. Verify preview video playback
+30. Verify curriculum section visibility
+31. Verify ratings and reviews display correctly
+32. Verify “Add to Wishlist” functionality
+33. Verify price and discount display correctly
+
+---
+
+## **5. Enrollment & Purchase Scenarios**
+
+### **Free Courses**
+
+34. Verify enrollment in free course
+35. Verify access granted immediately after enrollment
+
+### **Paid Courses**
+
+36. Verify payment gateway opens correctly
+37. Verify successful payment flow
+38. Verify failed payment handling
+39. Verify retry payment option
+40. Verify course access after successful payment
+41. Verify invoice/receipt generation
+
+---
+
+## **6. Video Learning & Content Consumption Scenarios**
+
+42. Verify video playback starts successfully
+43. Verify pause, play, forward, rewind options
+44. Verify video resume from last watched position
+45. Verify playback speed control
+46. Verify video quality selection
+47. Verify subtitles availability
+48. Verify video streaming on low bandwidth
+49. Verify content access restriction for unenrolled users
+
+---
+
+## **7. Course Progress Tracking Scenarios**
+
+50. Verify progress percentage updates correctly
+51. Verify lesson marked complete after watching
+52. Verify manual mark as complete option
+53. Verify progress sync across devices
+54. Verify course completion status
+
+---
+
+## **8. Assessments & Quiz Scenarios**
+
+55. Verify quiz access after lesson completion
+56. Verify MCQ question display
+57. Verify time-limited quiz functionality
+58. Verify auto-submission on timeout
+59. Verify score calculation accuracy
+60. Verify pass/fail criteria
+61. Verify quiz retake rules
+62. Verify quiz result visibility
+
+---
+
+## **9. Assignments & Practice Tests (If Applicable)**
+
+63. Verify assignment upload with valid format
+64. Verify invalid file type rejection
+65. Verify submission deadline enforcement
+66. Verify instructor feedback visibility
+
+---
+
+## **10. Certificate Scenarios**
+
+67. Verify certificate generation after course completion
+68. Verify certificate download option
+69. Verify certificate contains correct user/course details
+70. Verify certificate cannot be generated before completion
+
+---
+
+## **11. Reviews & Ratings Scenarios**
+
+71. Verify user can submit rating after course completion
+72. Verify review text validation
+73. Verify review edit/delete functionality
+74. Verify average rating updates correctly
+
+---
+
+## **12. Wishlist & Cart Scenarios**
+
+75. Verify add/remove course from wishlist
+76. Verify wishlist persistence across sessions
+77. Verify add/remove course from cart
+78. Verify multiple course purchase
+
+---
+
+## **13. Instructor Module Scenarios**
+
+79. Verify instructor can create a course
+80. Verify course draft save functionality
+81. Verify upload video content
+82. Verify curriculum structure creation
+83. Verify course submission for review
+84. Verify course publish after approval
+85. Verify instructor earnings dashboard
+
+---
+
+## **14. Admin Module Scenarios**
+
+86. Verify admin login with role-based access
+87. Verify user management (block/unblock)
+88. Verify course approval/rejection
+89. Verify content moderation
+90. Verify reports and analytics generation
+
+---
+
+## **15. Notification Scenarios**
+
+91. Verify email notification on enrollment
+92. Verify email notification on payment success
+93. Verify course update notifications
+94. Verify quiz reminder notifications
+95. Verify unsubscribe from notifications
+
+---
+
+## **16. Security Scenarios**
+
+96. Verify unauthorized access restriction
+97. Verify session timeout after inactivity
+98. Verify secure payment data handling
+99. Verify role-based access control
+100. Verify API authentication tokens
+
+---
+
+## **17. Performance Scenarios**
+
+101. Verify platform response under normal load
+102. Verify system behavior with concurrent users
+103. Verify video streaming under high load
+104. Verify database response time
+
+---
+
+## **18. Compatibility & Usability Scenarios**
+
+105. Verify platform on Chrome, Firefox, Edge, Safari
+106. Verify responsiveness on mobile & tablet
+107. Verify UI consistency across browsers
+108. Verify accessibility (keyboard navigation, screen reader)
+
+---
+
+## **19. Regression & Stability Scenarios**
+
+109. Verify existing features after new release
+110. Verify backward compatibility
+111. Verify critical user flows after bug fixes
+
+---
+
+### ✅ **TOTAL: 110+ REALISTIC TEST SCENARIOS**
+
+---
+
+
+
+* *** **** *****************************************************************************************************************************************************
+
+* *** **** *****************************************************************************************************************************************************
+
+
+# **TEST CASES – E-LEARNING PLATFORM (Udemy-Like LMS)**
+
+## **Module 1: User Registration & Login**
+
+| TC ID      | Test Case Title                             | Preconditions            | Test Steps                                                             | Test Data                                       | Expected Result                        | Priority |
+| ---------- | ------------------------------------------- | ------------------------ | ---------------------------------------------------------------------- | ----------------------------------------------- | -------------------------------------- | -------- |
+| TC_AUTH_01 | Verify user registration with valid details | User not registered      | 1. Open app<br>2. Click Sign Up<br>3. Enter valid details<br>4. Submit | Valid email & password                          | User should be registered successfully | High     |
+| TC_AUTH_02 | Verify registration with invalid email      | User not registered      | Enter invalid email format                                             | test@com                                        | Error message should display           | High     |
+| TC_AUTH_03 | Verify registration with existing email     | Email already registered | Enter existing email                                                   | [existing@email.com](mailto:existing@email.com) | Registration should fail               | High     |
+| TC_AUTH_04 | Verify login with valid credentials         | User registered          | Enter valid login details                                              | Valid email/password                            | User logged in successfully            | High     |
+| TC_AUTH_05 | Verify login with invalid password          | User registered          | Enter wrong password                                                   | Wrong password                                  | Error message shown                    | High     |
+| TC_AUTH_06 | Verify forgot password functionality        | User registered          | Click Forgot Password                                                  | Registered email                                | Reset link sent to email               | Medium   |
+
+---
+
+## **Module 2: User Profile Management**
+
+| TC ID     | Test Case Title                       | Preconditions  | Test Steps          | Test Data  | Expected Result              | Priority |
+| --------- | ------------------------------------- | -------------- | ------------------- | ---------- | ---------------------------- | -------- |
+| TC_PRO_01 | Verify update profile details         | User logged in | Update name & bio   | Valid data | Profile updated successfully | Medium   |
+| TC_PRO_02 | Verify upload profile picture         | User logged in | Upload image        | JPG/PNG    | Image uploaded successfully  | Low      |
+| TC_PRO_03 | Verify invalid profile picture upload | User logged in | Upload invalid file | PDF        | Error message displayed      | Low      |
+
+---
+
+## **Module 3: Course Search & Discovery**
+
+| TC ID        | Test Case Title                         | Preconditions     | Test Steps          | Test Data            | Expected Result              | Priority |
+| ------------ | --------------------------------------- | ----------------- | ------------------- | -------------------- | ---------------------------- | -------- |
+| TC_COURSE_01 | Verify course search with valid keyword | User on home page | Search course       | “Automation Testing” | Relevant courses displayed   | High     |
+| TC_COURSE_02 | Verify search with no results           | User on home page | Search random text  | “xyz123”             | No results message displayed | Medium   |
+| TC_COURSE_03 | Verify filter by rating                 | Courses available | Apply rating filter | 4+ stars             | Filtered courses shown       | Medium   |
+| TC_COURSE_04 | Verify sort by newest                   | Courses available | Apply sort          | Newest               | Sorted list displayed        | Low      |
+
+---
+
+## **Module 4: Course Details Page**
+
+| TC ID        | Test Case Title               | Preconditions     | Test Steps          | Test Data | Expected Result                 | Priority |
+| ------------ | ----------------------------- | ----------------- | ------------------- | --------- | ------------------------------- | -------- |
+| TC_DETAIL_01 | Verify course details display | Course exists     | Open course page    | NA        | Title, description, price shown | High     |
+| TC_DETAIL_02 | Verify preview video playback | Preview available | Click preview video | NA        | Video plays successfully        | High     |
+| TC_DETAIL_03 | Verify add to wishlist        | User logged in    | Click wishlist icon | NA        | Course added to wishlist        | Medium   |
+
+---
+
+## **Module 5: Course Enrollment & Payment**
+
+| TC ID     | Test Case Title                    | Preconditions   | Test Steps         | Test Data    | Expected Result              | Priority |
+| --------- | ---------------------------------- | --------------- | ------------------ | ------------ | ---------------------------- | -------- |
+| TC_PAY_01 | Verify enrollment in free course   | User logged in  | Click Enroll       | Free course  | Course enrolled successfully | High     |
+| TC_PAY_02 | Verify paid course purchase        | User logged in  | Proceed to payment | Valid card   | Payment successful           | High     |
+| TC_PAY_03 | Verify payment failure handling    | User logged in  | Enter invalid card | Invalid card | Payment failed message       | High     |
+| TC_PAY_04 | Verify course access after payment | Payment success | Open course        | NA           | Course content accessible    | High     |
+
+---
+
+## **Module 6: Video Learning & Content Access**
+
+| TC ID       | Test Case Title               | Preconditions           | Test Steps   | Test Data | Expected Result                  | Priority |
+| ----------- | ----------------------------- | ----------------------- | ------------ | --------- | -------------------------------- | -------- |
+| TC_VIDEO_01 | Verify video playback         | Course enrolled         | Play video   | NA        | Video plays without error        | High     |
+| TC_VIDEO_02 | Verify resume playback        | Video partially watched | Reopen video | NA        | Video resumes from last position | Medium   |
+| TC_VIDEO_03 | Verify playback speed control | Video playing           | Change speed | 1.5x      | Speed updated correctly          | Low      |
+
+---
+
+## **Module 7: Course Progress Tracking**
+
+| TC ID          | Test Case Title                     | Preconditions              | Test Steps      | Test Data | Expected Result        | Priority |
+| -------------- | ----------------------------------- | -------------------------- | --------------- | --------- | ---------------------- | -------- |
+| TC_PROGRESS_01 | Verify lesson completion            | Lesson watched             | Complete lesson | NA        | Lesson marked complete | High     |
+| TC_PROGRESS_02 | Verify progress percentage          | Multiple lessons completed | View progress   | NA        | Correct % displayed    | Medium   |
+| TC_PROGRESS_03 | Verify progress sync across devices | Logged in on 2 devices     | Open course     | NA        | Progress synced        | Medium   |
+
+---
+
+## **Module 8: Quizzes & Assessments**
+
+| TC ID      | Test Case Title        | Preconditions    | Test Steps        | Test Data     | Expected Result            | Priority |
+| ---------- | ---------------------- | ---------------- | ----------------- | ------------- | -------------------------- | -------- |
+| TC_QUIZ_01 | Verify quiz access     | Lesson completed | Open quiz         | NA            | Quiz accessible            | High     |
+| TC_QUIZ_02 | Verify quiz submission | Quiz started     | Submit answers    | Valid answers | Score calculated correctly | High     |
+| TC_QUIZ_03 | Verify quiz timeout    | Timed quiz       | Wait till timeout | NA            | Auto-submit triggered      | Medium   |
+
+---
+
+## **Module 9: Certificate Generation**
+
+| TC ID      | Test Case Title                | Preconditions         | Test Steps           | Test Data | Expected Result              | Priority |
+| ---------- | ------------------------------ | --------------------- | -------------------- | --------- | ---------------------------- | -------- |
+| TC_CERT_01 | Verify certificate generation  | Course completed      | Generate certificate | NA        | Certificate generated        | High     |
+| TC_CERT_02 | Verify certificate download    | Certificate available | Download certificate | NA        | File downloaded successfully | Medium   |
+| TC_CERT_03 | Verify certificate restriction | Course incomplete     | Generate certificate | NA        | Action restricted            | High     |
+
+---
+
+## **Module 10: Reviews & Ratings**
+
+| TC ID     | Test Case Title             | Preconditions    | Test Steps    | Test Data    | Expected Result  | Priority |
+| --------- | --------------------------- | ---------------- | ------------- | ------------ | ---------------- | -------- |
+| TC_REV_01 | Verify submit course review | Course completed | Submit review | 5 stars      | Review submitted | Medium   |
+| TC_REV_02 | Verify edit review          | Review exists    | Edit review   | Updated text | Review updated   | Low      |
+
+---
+
+## **Module 11: Security & Session Management**
+
+| TC ID     | Test Case Title              | Preconditions  | Test Steps         | Test Data | Expected Result    | Priority |
+| --------- | ---------------------------- | -------------- | ------------------ | --------- | ------------------ | -------- |
+| TC_SEC_01 | Verify unauthorized access   | Not logged in  | Access paid course | NA        | Access denied      | High     |
+| TC_SEC_02 | Verify session timeout       | User inactive  | Wait idle          | NA        | User logged out    | Medium   |
+| TC_SEC_03 | Verify logout clears session | User logged in | Click logout       | NA        | Session terminated | High     |
+
+---
+
+
+
+* *** **** *****************************************************************************************************************************************************
+
+* *** **** *****************************************************************************************************************************************************
+
+# **AUTOMATION-READY TEST CASES – E-LEARNING PLATFORM (UDemy-Like)**
+
+---
+
+## **Legend (Automation Focus)**
+
+* **Type**: UI / API
+* **Automatable**: Yes / Partial
+* **Framework Friendly**: Selenium | Playwright | Cypress
+* **Assertion Focus**: What to validate in code
+
+---
+
+## **Module 1: Authentication**
+
+### **TC_AUT_01 – User Login (Valid Credentials)**
+
+| Field           | Details                                                                                 |
+| --------------- | --------------------------------------------------------------------------------------- |
+| Test Case ID    | TC_AUT_01                                                                               |
+| Scenario        | Login with valid credentials                                                            |
+| Type            | UI                                                                                      |
+| Automatable     | Yes                                                                                     |
+| Preconditions   | User already registered                                                                 |
+| Steps           | 1. Open login page<br>2. Enter valid email<br>3. Enter valid password<br>4. Click Login |
+| Test Data       | [valid_user@email.com](mailto:valid_user@email.com) / Password@123                      |
+| Expected Result | User redirected to dashboard                                                            |
+| Assertions      | - URL contains `/dashboard`<br>- Logout button visible                                  |
+| Priority        | High                                                                                    |
+
+---
+
+### **TC_AUT_02 – Login Failure (Invalid Password)**
+
+| Field           | Details                                                        |
+| --------------- | -------------------------------------------------------------- |
+| Test Case ID    | TC_AUT_02                                                      |
+| Scenario        | Login with invalid password                                    |
+| Type            | UI                                                             |
+| Automatable     | Yes                                                            |
+| Steps           | Enter valid email + invalid password                           |
+| Test Data       | [valid_user@email.com](mailto:valid_user@email.com) / wrong123 |
+| Expected Result | Error message displayed                                        |
+| Assertions      | - Error text visible<br>- User remains on login page           |
+| Priority        | High                                                           |
+
+---
+
+## **Module 2: Course Search & Discovery**
+
+### **TC_AUT_03 – Course Search**
+
+| Field           | Details                                                    |
+| --------------- | ---------------------------------------------------------- |
+| Test Case ID    | TC_AUT_03                                                  |
+| Scenario        | Search course by keyword                                   |
+| Type            | UI                                                         |
+| Automatable     | Yes                                                        |
+| Preconditions   | Courses available                                          |
+| Steps           | Search for a keyword                                       |
+| Test Data       | “Automation Testing”                                       |
+| Expected Result | Relevant courses listed                                    |
+| Assertions      | - Course list count > 0<br>- Course titles contain keyword |
+| Priority        | High                                                       |
+
+---
+
+## **Module 3: Course Enrollment**
+
+### **TC_AUT_04 – Enroll Free Course**
+
+| Field           | Details                                                             |
+| --------------- | ------------------------------------------------------------------- |
+| Test Case ID    | TC_AUT_04                                                           |
+| Scenario        | Enroll in free course                                               |
+| Type            | UI                                                                  |
+| Automatable     | Yes                                                                 |
+| Preconditions   | User logged in                                                      |
+| Steps           | 1. Open free course<br>2. Click Enroll                              |
+| Expected Result | Course added to My Learning                                         |
+| Assertions      | - “Start Learning” button visible<br>- Course appears in My Courses |
+| Priority        | High                                                                |
+
+---
+
+## **Module 4: Paid Course Purchase (UI + API)**
+
+### **TC_AUT_05 – Paid Course Purchase (Mock Payment)**
+
+| Field           | Details                                                        |
+| --------------- | -------------------------------------------------------------- |
+| Test Case ID    | TC_AUT_05                                                      |
+| Scenario        | Purchase paid course                                           |
+| Type            | UI                                                             |
+| Automatable     | Partial (Payment mocked)                                       |
+| Preconditions   | User logged in                                                 |
+| Steps           | 1. Click Buy Now<br>2. Enter card details<br>3. Submit payment |
+| Test Data       | Test card (sandbox)                                            |
+| Expected Result | Payment success                                                |
+| Assertions      | - Success message displayed<br>- Course unlocked               |
+| Priority        | High                                                           |
+
+---
+
+## **Module 5: Video Playback**
+
+### **TC_AUT_06 – Video Play & Resume**
+
+| Field           | Details                                             |
+| --------------- | --------------------------------------------------- |
+| Test Case ID    | TC_AUT_06                                           |
+| Scenario        | Resume video from last position                     |
+| Type            | UI                                                  |
+| Automatable     | Yes                                                 |
+| Preconditions   | Course enrolled                                     |
+| Steps           | 1. Play video<br>2. Pause at 30s<br>3. Refresh page |
+| Expected Result | Video resumes from last timestamp                   |
+| Assertions      | - CurrentTime > 25s                                 |
+| Priority        | Medium                                              |
+
+---
+
+## **Module 6: Course Progress Tracking**
+
+### **TC_AUT_07 – Progress Update**
+
+| Field           | Details                                         |
+| --------------- | ----------------------------------------------- |
+| Test Case ID    | TC_AUT_07                                       |
+| Scenario        | Course progress updates after lesson completion |
+| Type            | UI                                              |
+| Automatable     | Yes                                             |
+| Preconditions   | Course enrolled                                 |
+| Steps           | Complete one lesson                             |
+| Expected Result | Progress percentage updated                     |
+| Assertions      | - Progress % increased                          |
+| Priority        | High                                            |
+
+---
+
+## **Module 7: Quiz & Assessment**
+
+### **TC_AUT_08 – Quiz Submission**
+
+| Field           | Details                                         |
+| --------------- | ----------------------------------------------- |
+| Test Case ID    | TC_AUT_08                                       |
+| Scenario        | Submit quiz successfully                        |
+| Type            | UI                                              |
+| Automatable     | Yes                                             |
+| Preconditions   | Lesson completed                                |
+| Steps           | 1. Start quiz<br>2. Select answers<br>3. Submit |
+| Expected Result | Score displayed                                 |
+| Assertions      | - Score visible<br>- Result status shown        |
+| Priority        | High                                            |
+
+---
+
+## **Module 8: Certificate Generation**
+
+### **TC_AUT_09 – Generate Certificate**
+
+| Field           | Details                                         |
+| --------------- | ----------------------------------------------- |
+| Test Case ID    | TC_AUT_09                                       |
+| Scenario        | Generate certificate after course completion    |
+| Type            | UI                                              |
+| Automatable     | Yes                                             |
+| Preconditions   | Course 100% completed                           |
+| Steps           | Click Generate Certificate                      |
+| Expected Result | Certificate downloadable                        |
+| Assertions      | - PDF download triggered<br>- User name visible |
+| Priority        | High                                            |
+
+---
+
+## **Module 9: Wishlist & Cart**
+
+### **TC_AUT_10 – Wishlist Add/Remove**
+
+| Field           | Details                             |
+| --------------- | ----------------------------------- |
+| Test Case ID    | TC_AUT_10                           |
+| Scenario        | Add and remove course from wishlist |
+| Type            | UI                                  |
+| Automatable     | Yes                                 |
+| Steps           | Click wishlist icon twice           |
+| Expected Result | Course added then removed           |
+| Assertions      | - Wishlist count updated            |
+| Priority        | Medium                              |
+
+---
+
+## **Module 10: API Automation (Backend)**
+
+### **TC_API_01 – Login API**
+
+| Field           | Details                                  |
+| --------------- | ---------------------------------------- |
+| Test Case ID    | TC_API_01                                |
+| Scenario        | Login API with valid credentials         |
+| Type            | API                                      |
+| Automatable     | Yes                                      |
+| Endpoint        | POST /api/login                          |
+| Request Body    | email, password                          |
+| Expected Result | 200 OK                                   |
+| Assertions      | - Token returned<br>- Response time < 2s |
+| Priority        | High                                     |
+
+---
+
+### **TC_API_02 – Course List API**
+
+| Field           | Details                           |
+| --------------- | --------------------------------- |
+| Test Case ID    | TC_API_02                         |
+| Scenario        | Fetch course list                 |
+| Type            | API                               |
+| Endpoint        | GET /api/courses                  |
+| Expected Result | List of courses                   |
+| Assertions      | - Status 200<br>- Array not empty |
+| Priority        | Medium                            |
+
+---
+
+## **Reusable Automation Components**
+
+### **Common Functions**
+
+* loginUser()
+* searchCourse()
+* enrollCourse()
+* playVideo()
+* submitQuiz()
+
+### **Locators Strategy**
+
+* Prefer **data-testid**
+* Avoid dynamic XPath
+* Use CSS selectors
+
+---
+
+## **CI/CD Ready**
+
+✔ Smoke Suite
+✔ Regression Suite
+✔ Nightly Execution
+✔ Jenkins / GitHub Actions Compatible
+
+---
+
+## **Automation Coverage Summary**
+
+| Area               | Coverage         |
+| ------------------ | ---------------- |
+| Authentication     | 100%             |
+| Course Flow        | 90%              |
+| Video & Progress   | 85%              |
+| Quiz & Certificate | 80%              |
+| Payment            | Partial (Mocked) |
+
+---
+
+
+* *** **** *****************************************************************************************************************************************************
+
+* *** **** *****************************************************************************************************************************************************
+
+
+# **API TEST CASES – E-LEARNING PLATFORM (POSTMAN)**
+
+---
+
+## **1. Authentication APIs**
+
+---
+
+### **API_TC_01 – User Login (Valid Credentials)**
+
+**Method:** POST
+**Endpoint:** `/api/login`
+
+**Precondition:** User is already registered
+
+**Request Body:**
+
+```json
+{
+  "email": "valid_user@email.com",
+  "password": "Password@123"
+}
+```
+
+**Expected Result:**
+
+* Login successful
+* Auth token returned
+
+**Postman Tests:**
+
+```javascript
+pm.test("Status code is 200", () => {
+  pm.response.to.have.status(200);
+});
+
+pm.test("Token is present", () => {
+  pm.expect(pm.response.json().token).to.exist;
+});
+```
+
+---
+
+### **API_TC_02 – User Login (Invalid Password)**
+
+**Method:** POST
+**Endpoint:** `/api/login`
+
+**Request Body:**
+
+```json
+{
+  "email": "valid_user@email.com",
+  "password": "wrong123"
+}
+```
+
+**Expected Result:**
+
+* Login fails
+* Proper error message returned
+
+**Postman Tests:**
+
+```javascript
+pm.test("Status code is 401", () => {
+  pm.response.to.have.status(401);
+});
+
+pm.test("Error message present", () => {
+  pm.expect(pm.response.json().message).to.include("Invalid");
+});
+```
+
+---
+
+### **API_TC_03 – Forgot Password**
+
+**Method:** POST
+**Endpoint:** `/api/forgot-password`
+
+**Request Body:**
+
+```json
+{
+  "email": "valid_user@email.com"
+}
+```
+
+**Expected Result:**
+
+* Reset password email sent
+
+**Postman Tests:**
+
+```javascript
+pm.test("Status code is 200", () => {
+  pm.response.to.have.status(200);
+});
+```
+
+---
+
+## **2. Course APIs**
+
+---
+
+### **API_TC_04 – Fetch All Courses**
+
+**Method:** GET
+**Endpoint:** `/api/courses`
+
+**Expected Result:**
+
+* List of courses returned
+
+**Postman Tests:**
+
+```javascript
+pm.test("Status code is 200", () => {
+  pm.response.to.have.status(200);
+});
+
+pm.test("Courses array not empty", () => {
+  pm.expect(pm.response.json().data.length).to.be.above(0);
+});
+```
+
+---
+
+### **API_TC_05 – Get Course Details by ID**
+
+**Method:** GET
+**Endpoint:** `/api/courses/{courseId}`
+
+**Expected Result:**
+
+* Course details returned for valid ID
+
+**Postman Tests:**
+
+```javascript
+pm.test("Correct course ID returned", () => {
+  pm.expect(pm.response.json().data.id).to.eql(pm.variables.get("courseId"));
+});
+```
+
+---
+
+### **API_TC_06 – Search Course**
+
+**Method:** GET
+**Endpoint:** `/api/courses/search?keyword=automation`
+
+**Expected Result:**
+
+* Matching courses returned
+
+**Postman Tests:**
+
+```javascript
+pm.test("Search results found", () => {
+  pm.expect(pm.response.json().data.length).to.be.above(0);
+});
+```
+
+---
+
+## **3. Enrollment APIs**
+
+---
+
+### **API_TC_07 – Enroll in Free Course**
+
+**Method:** POST
+**Endpoint:** `/api/enroll`
+
+**Headers:**
+
+```
+Authorization: Bearer {{token}}
+```
+
+**Request Body:**
+
+```json
+{
+  "courseId": "123"
+}
+```
+
+**Expected Result:**
+
+* Enrollment successful
+
+**Postman Tests:**
+
+```javascript
+pm.test("Enrollment successful", () => {
+  pm.response.to.have.status(200);
+});
+```
+
+---
+
+### **API_TC_08 – Enroll Without Authentication**
+
+**Method:** POST
+**Endpoint:** `/api/enroll`
+
+**Expected Result:**
+
+* Access denied
+
+**Postman Tests:**
+
+```javascript
+pm.test("Unauthorized access blocked", () => {
+  pm.response.to.have.status(401);
+});
+```
+
+---
+
+## **4. Video & Learning APIs**
+
+---
+
+### **API_TC_09 – Fetch Course Lessons**
+
+**Method:** GET
+**Endpoint:** `/api/courses/{courseId}/lessons`
+
+**Headers:** Authorization token
+
+**Expected Result:**
+
+* Lessons list returned
+
+**Postman Tests:**
+
+```javascript
+pm.test("Lessons available", () => {
+  pm.expect(pm.response.json().data.length).to.be.above(0);
+});
+```
+
+---
+
+### **API_TC_10 – Save Video Progress**
+
+**Method:** POST
+**Endpoint:** `/api/video/progress`
+
+**Request Body:**
+
+```json
+{
+  "courseId": "123",
+  "lessonId": "456",
+  "timestamp": 120
+}
+```
+
+**Expected Result:**
+
+* Progress saved successfully
+
+**Postman Tests:**
+
+```javascript
+pm.test("Progress saved", () => {
+  pm.response.to.have.status(200);
+});
+```
+
+---
+
+## **5. Quiz APIs**
+
+---
+
+### **API_TC_11 – Start Quiz**
+
+**Method:** POST
+**Endpoint:** `/api/quiz/start`
+
+**Expected Result:**
+
+* Quiz session created
+
+**Postman Tests:**
+
+```javascript
+pm.test("Quiz started", () => {
+  pm.response.to.have.status(200);
+});
+```
+
+---
+
+### **API_TC_12 – Submit Quiz**
+
+**Method:** POST
+**Endpoint:** `/api/quiz/submit`
+
+**Request Body:**
+
+```json
+{
+  "quizId": "789",
+  "answers": [
+    { "questionId": 1, "answer": "A" }
+  ]
+}
+```
+
+**Expected Result:**
+
+* Score calculated
+
+**Postman Tests:**
+
+```javascript
+pm.test("Score returned", () => {
+  pm.expect(pm.response.json().score).to.exist;
+});
+```
+
+---
+
+## **6. Certificate APIs**
+
+---
+
+### **API_TC_13 – Generate Certificate**
+
+**Method:** POST
+**Endpoint:** `/api/certificate/generate`
+
+**Expected Result:**
+
+* Certificate generated only after completion
+
+**Postman Tests:**
+
+```javascript
+pm.test("Certificate generated", () => {
+  pm.response.to.have.status(200);
+});
+```
+
+---
+
+## **7. Security & Session APIs**
+
+---
+
+### **API_TC_14 – Access Protected API Without Token**
+
+**Method:** GET
+**Endpoint:** `/api/my-courses`
+
+**Expected Result:**
+
+* Unauthorized error
+
+**Postman Tests:**
+
+```javascript
+pm.test("Unauthorized access blocked", () => {
+  pm.response.to.have.status(401);
+});
+```
+
+---
+
+## **8. Performance Validation (Postman)**
+
+### **API_TC_15 – Response Time Validation**
+
+```javascript
+pm.test("Response time < 2000ms", () => {
+  pm.expect(pm.response.responseTime).to.be.below(2000);
+});
+```
+
+---
+
+## **Postman Best Practices (Interview Bonus)**
+
+* Use **Environment variables** (`{{token}}`, `{{courseId}}`)
+* Add **Pre-request scripts** for token generation
+* Run via **Newman in CI/CD**
+* Tag requests with **Smoke / Regression**
+
+---
+
+
+
+* *** **** *****************************************************************************************************************************************************
+
+* *** **** *****************************************************************************************************************************************************
+
+
+
+
+# **AUTOMATION TEST PLAN – LMS (E-Learning Platform)**
+
+---
+
+## **1. Purpose of Automation Plan**
+
+The purpose of this automation plan is to:
+
+* Identify **test areas suitable for automation**
+* Identify **test areas not suitable for automation**
+* Optimize test effort, cost, and execution time
+* Improve regression stability and release confidence
+
+---
+
+## **2. Automation Goals**
+
+* Automate **high-risk, high-frequency user flows**
+* Reduce **manual regression effort**
+* Enable **CI/CD pipeline execution**
+* Ensure **faster feedback** to development team
+* Maintain **stable and reusable automation suite**
+
+---
+
+## **3. What CAN Be Automated in LMS**
+
+These areas are **stable, repetitive, and business-critical**, making them ideal for automation.
+
+---
+
+### **3.1 Authentication & Authorization (HIGH PRIORITY)**
+
+✅ **Automate**
+
+* User login (valid / invalid)
+* Logout
+* Forgot password
+* Role-based access validation (Student / Instructor / Admin)
+* Session timeout
+
+**Why automate?**
+
+* High usage
+* High business risk
+* Stable functionality
+
+---
+
+### **3.2 Course Discovery & Browsing**
+
+✅ **Automate**
+
+* Course search
+* Filters (rating, price, category)
+* Sorting (popularity, newest)
+* Course details page validation
+
+**Why automate?**
+
+* Core LMS functionality
+* Regression-prone after UI changes
+
+---
+
+### **3.3 Enrollment & Access Control**
+
+✅ **Automate**
+
+* Free course enrollment
+* Paid course enrollment (with mocked payment)
+* Access restriction for unenrolled users
+* “My Learning” page validation
+
+**Why automate?**
+
+* Business-critical
+* Access issues directly impact revenue
+
+---
+
+### **3.4 Learning Content Access**
+
+✅ **Automate**
+
+* Video play / pause
+* Resume playback
+* Lesson completion marking
+* Content visibility after enrollment
+
+⚠️ **Partial automation**
+
+* Video buffering behavior
+* Streaming quality
+
+**Why partial?**
+
+* Dependent on network & browser
+
+---
+
+### **3.5 Course Progress Tracking**
+
+✅ **Automate**
+
+* Progress percentage updates
+* Lesson completion sync
+* Course completion status
+
+**Why automate?**
+
+* Pure logic-based
+* Easily verifiable via UI/API
+
+---
+
+### **3.6 Quizzes & Assessments**
+
+✅ **Automate**
+
+* Quiz start
+* Answer submission
+* Auto evaluation
+* Pass/fail result
+* Quiz retake rules
+
+**Why automate?**
+
+* Rule-driven
+* High regression impact
+
+---
+
+### **3.7 Certificates**
+
+✅ **Automate**
+
+* Certificate generation after completion
+* Download availability
+* Restriction before completion
+
+**Why automate?**
+
+* Clear preconditions
+* Deterministic outcome
+
+---
+
+### **3.8 API Automation (VERY IMPORTANT)**
+
+✅ **Automate**
+
+* Login API
+* Course list API
+* Enrollment API
+* Progress update API
+* Quiz submit API
+* Certificate API
+
+**Why automate APIs?**
+
+* Faster than UI
+* More stable
+* Ideal for CI/CD
+
+---
+
+### **3.9 Smoke & Regression Suites**
+
+✅ **Automate**
+
+* Critical end-to-end flows
+* Post-deployment smoke tests
+* Nightly regression suite
+
+---
+
+## **4. What SHOULD NOT Be Automated in LMS**
+
+These areas are **unstable, subjective, or low ROI**.
+
+---
+
+### **4.1 UI/UX & Visual Design**
+
+❌ **Do NOT automate**
+
+* UI look & feel
+* Font size, spacing
+* Color schemes
+* Layout aesthetics
+
+**Reason**
+
+* Subjective
+* Frequent UI changes
+* High maintenance cost
+
+---
+
+### **4.2 Exploratory & Ad-hoc Testing**
+
+❌ **Do NOT automate**
+
+* Random user behavior
+* New feature exploration
+* Usability feedback
+
+**Reason**
+
+* Requires human judgment
+* Automation cannot “explore”
+
+---
+
+### **4.3 Payment Gateway Real Transactions**
+
+❌ **Do NOT automate**
+
+* Real card transactions
+* Bank-side validations
+
+⚠️ **Instead**
+
+* Mock payment gateway
+* Use sandbox cards
+
+**Reason**
+
+* Risky
+* External dependency
+
+---
+
+### **4.4 Video Quality & Network Behavior**
+
+❌ **Do NOT automate**
+
+* Video buffering experience
+* Network fluctuation scenarios
+* Streaming quality perception
+
+**Reason**
+
+* Environment dependent
+* Flaky automation results
+
+---
+
+### **4.5 Notifications Content Validation**
+
+❌ **Do NOT automate**
+
+* Email wording
+* Notification content correctness
+
+⚠️ **Automate only**
+
+* Email trigger
+* Notification sent status
+
+---
+
+### **4.6 CAPTCHA & OTP Verification**
+
+❌ **Do NOT automate**
+
+* CAPTCHA solving
+* Real OTP flows
+
+⚠️ **Workaround**
+
+* Bypass via test environment
+* Feature flags
+
+---
+
+## **5. Automation Tool Strategy**
+
+| Area            | Tool                     |
+| --------------- | ------------------------ |
+| UI Automation   | Playwright / Selenium    |
+| API Automation  | Postman + Newman         |
+| Test Management | Jira / TestRail          |
+| CI/CD           | Jenkins / GitHub Actions |
+| Reporting       | Allure / HTML Reports    |
+
+---
+
+## **6. Automation Framework Approach**
+
+* Page Object Model (POM)
+* Data-driven testing
+* Environment-based configuration
+* Reusable utilities
+* Parallel execution support
+
+---
+
+## **7. Automation Execution Strategy**
+
+| Suite      | When             |
+| ---------- | ---------------- |
+| Smoke      | Every deployment |
+| Regression | Nightly          |
+| API Suite  | Every commit     |
+| Full Suite | Before release   |
+
+---
+
+## **8. Risks & Mitigation**
+
+| Risk                 | Mitigation                      |
+| -------------------- | ------------------------------- |
+| Flaky tests          | Explicit waits, stable locators |
+| Frequent UI changes  | API-first automation            |
+| Maintenance overhead | Modular framework               |
+
+---
+
+## **9. Automation Coverage Target**
+
+| Area              | Target |
+| ----------------- | ------ |
+| APIs              | 80–90% |
+| UI Critical Flows | 70–80% |
+| Overall LMS       | ~75%   |
+
+---
+
+## **10. Conclusion (Interview-Ready)**
+
+> In an LMS platform, automation should focus on **business-critical, rule-based, and repetitive flows** like authentication, enrollment, learning progress, quizzes, certificates, and APIs, while **UI aesthetics, exploratory testing, and real payment flows should remain manual** to avoid high maintenance and flaky automation.
+
+* *** **** *****************************************************************************************************************************************************
+
+* *** **** *****************************************************************************************************************************************************
+
+
